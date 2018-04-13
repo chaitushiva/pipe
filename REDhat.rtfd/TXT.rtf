@@ -1,0 +1,605 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AndaleMono;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Bold;\f4\fmodern\fcharset0 Courier;\f5\froman\fcharset0 Times-Roman;
+}
+{\colortbl;\red255\green255\blue255;\red47\green255\blue18;\red0\green0\blue0;\red193\green101\blue28;
+\red74\green0\blue255;\red38\green38\blue38;\red59\green255\blue255;\red128\green128\blue128;\red0\green0\blue0;
+\red0\green42\blue215;\red0\green0\blue0;\red28\green214\blue4;\red223\green223\blue223;\red0\green0\blue163;
+\red14\green14\blue14;\red235\green236\blue237;\red14\green14\blue14;\red235\green236\blue237;\red119\green0\blue2;
+\red255\green238\blue149;\red21\green102\blue47;\red0\green0\blue0;\red255\green255\blue255;\red251\green251\blue251;
+}
+{\*\expandedcolortbl;;\cssrgb\c15686\c99608\c7843;\csgray\c0\c90000;\cssrgb\c80554\c47367\c13835;
+\cssrgb\c36733\c20486\c100000;\cssrgb\c20000\c20000\c20000;\cssrgb\c24184\c100000\c100000;\csgray\c57231\c50000;\csgray\c0;
+\cssrgb\c0\c27377\c87435;\cssrgb\c0\c0\c0;\cssrgb\c0\c85000\c0;\cssrgb\c90000\c90000\c90000;\cssrgb\c0\c0\c70000;
+\cssrgb\c6667\c6667\c6667;\cssrgb\c93725\c94118\c94510;\cssrgb\c6667\c6667\c6667;\cssrgb\c93725\c94118\c94510;\cssrgb\c54821\c0\c0;
+\cssrgb\c100000\c94118\c64706;\cssrgb\c7451\c46667\c23922;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;\cssrgb\c98824\c98824\c98824;
+}
+\margl1440\margr1440\vieww28600\viewh15820\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs34 \cf0 \
+\
+RED HAT LINUX  - paid support\
+\
+Centos \'97 free open source- copy of RedHat slight variation \
+\
+Fedora - desktop users - free open source, not great for servers\
+\
+Routers - run on derivates of linux both Cisco , juniper \
+  - reason is being free\
+  - support is paid\
+  - far more secure than windows/Mac - less used for desktops(so no threats), root privileges are needed to install any software\
+  - network devices- tvs ,mobiles, routers, smart computers, etc\
+  - Gamers - not for gamers - graphics are not too high defined\
+  - Banks specially all servers, stock markets servers \'85most of the world runs on linux\
+  - customizable \'85 fedora(Desktop users)\
+\
+ls \'97help\
+\
+ls ` \'97takes to home directory of current logged in user\
+ls -R /directory/\'97 list all directories and sub directories\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs58 \cf0 Man and help command\
+  Man tells you what individual argument is but help will show only command syntax\
+\
+chown - - help\
+man chmod\
+\
+locate and find are used to find a file \
+locate - faster than find \'85db should be updated \
+\'97locate filename\
+find - when u know in specific, find /etc/ -name \'93file.txt\'94\
+\
+chmod -R 755 /etc/. \'97changes permission of all files under the folder\
+\
+chown root:root filename\
+\
+rm -rf foldername \'97\'97 recursively removes all files and folders under foldername directory\
+\
+Debian - UBUNTU uses apt-get package manager\
+\
+rpm is the extension for software packages and -rpm -q packagename syntax to check if the package is already installed or not\
+\
+ll [abcd]love \'97will match alove,blove,clove,dlove\
+\
+ll [!abcd]love \'97 will exclude above,blove,clove,dlove\
+\
+
+\b grep , egrep\
+
+\b0 egrep \'93pattern1/pattern2/pattern3\'94 or grep [456] or grep[1-8] \
+\
+INPUT OUTPUT Redirection\
+Stdin (0)\
+stdout (1)\
+Stderr (2)\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs44 \cf2 \cb3 \CocoaLigature0 whoami > output\
+ps -ef | grep "ec2-user" 2> output\
+
+\f0\fs58 \cf0 \cb1 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 go to home directory of current user  : cd ~/\
+cd /home/$(whoami)   : will take u to loggedin users home directory\
+\
+awk : delimiters spaces,commas,any symbols \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs44 \cf2 \cb3 \CocoaLigature0 ps -ef | grep "ec2-user" | awk -F" " '\{print $2\}'\
+ps -ef | grep "ec2-user" | awk -F" " '\{print $2\}'>> text | cat text\
+
+\f0\fs58 \cf0 \cb1 \CocoaLigature1 \
+\
+Terminal Text editors\
+vi - not user friendly but most powerful\
+vim(modified version of vi editor),\
+nano  \
+\
+Vim : keys \
+Command  mode and insert mode\
+\
+dd : cut the line 3dd, cut three lines\
+yy : yank or copy the line 3yy, copy three lines\
+p : paste the line\
+\
+
+\b Find a pattern in file : \'97\'97 \
+
+\b0     \
+:/searchpattern top to bottom search\
+:?searchpatter bottom to top searches\
+\
+$ end of the line\
+u undo changes made\
+\
+
+\b Search and replace\
+
+\b0  :se nu > numbering the lines in the line\
+:1,$s/pattern/replace/gi   g-global ,i-ignore case\
+\
+
+\f1\fs44 \cf2 \cb3 \CocoaLigature0 :1,$s/ec2-user/replace/gi
+\f0\fs58 \cf0 \cb1 \CocoaLigature1 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs44 \cf4 \cb3 \CocoaLigature0       1 \cf2 \cb3 root      2518   930  0 11:25 ?        00:00:00 sshd: replace [priv]\
+\cf4 \cb3       2 \cf2 \cb3 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0\
+\cf4 \cb3       3 \cf2 \cb3 replace  2522  2521  0 11:25 pts/0    00:00:00 -bash\
+\cf4 \cb3       4 \cf2 \cb3 replace  3314  2522  0 12:49 pts/0    00:00:00 ps -ef\
+\cf4 \cb3       5 \cf2 \cb3 replace  3315  2522  0 12:49 pts/0    00:00:00 grep --color=auto replace\
+\cf4 \cb3       6 \cf2 \cb3 root      2518   930  0 11:25 ?        00:00:00 sshd: replace [priv]\
+\cf4 \cb3       7 \cf2 \cb3 \
+\cf4 \cb3       8 \cf2 \cb3 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0\
+\cf4 \cb3       9 \cf2 \cb3 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0\
+\cf4 \cb3      10 \cf2 \cb3 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0\
+\cf4 \cb3      11 \cf2 \cb3 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0\
+\cf4 \cb3      12 \cf2 \cb3 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0\
+\cf4 \cb3      13 \cf2 \cb3 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0\
+\cf4 \cb3      14 \cf2 \cb3 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0\
+\cf4 \cb3      15 \cf2 \cb3 c2-user  3676  2522  0 15:01 pts/0    00:00:00 grep --color=auto ec2-use\cf4 \cb3         \cf2 \cb3 r/bash\
+\cf5 \cb3 ~                                                                               \cf2 \cb3 \
+\cf5 \cb3 ~                                                                               \cf2 \cb3 \
+\cf5 \cb3 ~                                                                               \cf2 \cb3 \
+\cf5 \cb3 ~                                                                               \cf2 \cb3 \
+\cf5 \cb3 ~                                                                               \cf2 \cb3 \
+\cf5 \cb3 ~                                                                               \cf2 \cb3 \
+\cf5 \cb3 ~                                                                               \cf2 \cb3 \
+:se nu
+\f0\fs58 \cf0 \cb1 \CocoaLigature1 \
+\
+:se nu   - gives numbering to the lines \
+:1,10d - deletes lines one to 10\
+\
+Search and replace\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs44 \cf2 \cb3 \CocoaLigature0 :1,4s/Chassis/love\
+
+\f0\fs58 \cf0 \cb1 \CocoaLigature1 \
+Search and delete the word which has word love\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs44 \cf5 \cb3 \CocoaLigature0                                                              \cf2 \cb3 \
+:1,5g/love/d
+\f0\fs58 \cf0 \cb1 \CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sl560\sa321\partightenfactor0
+
+\b \cf6 \expnd0\expndtw0\kerning0
+Configure Global Security\
+\ul File system\
+
+\b0 \ulnone cd / #takes u to root directory \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf7 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 bin\cf9    \cf10 data\cf9   \cf10 etc\cf9    \cf7 lib\cf9     \cf10 media\cf9   \cf10 opt\cf9    \cf10 root\cf9   \cf7 sbin\cf9   \cf10 sys\cf9   \cf10 usr\cf9 \
+\cf10 boot\cf9   \cf10 dev\cf9    \cf10 home\cf9   \cf7 lib64\cf9   \cf10 mnt\cf9     \cf10 proc\cf9   \cf10 run\cf9    \cf10 srv\cf9    \cf11 \cb12 tmp\cf9 \cb8   \cf10 var
+\f0\b\fs58 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1  \
+\
+bin # consists of all binaries, I mean all the programs\
+\
+examples: Yum,awk,grep ,etc\
+\
+dev # devices, virtual directory ..it has hardware listed when we have \
+\pard\pardeftab720\sl560\sa321\partightenfactor0
+\cf6 \
+home #all users have own directory to save files \
+lib # libraries are stored or usr directory also\
+mnt # temp mounting place devices or drives \
+proc # files for trouble shooting like uptime,etc\
+tmp # tem
+\b0 p folders go\
+
+\b var
+\b0  # website is inside www under var, it has log files, cron jobs..\
+
+\b boot
+\b0  #consists of all the files that system needs for booting\
+
+\b etc
+\b0  #all config files are present, user,group records are present\
+/etc/group #group entry is found here\
+/etc/passwd #user entry is found here\
+/etc/shadow #encrypted password\
+
+\b media
+\b0  # harddisk\
+
+\b usr
+\b0  # unix system resources\
+
+\b hardlink and softlink\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\b0\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ ln test hardlink
+\f0\b\fs58 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1   
+\b0 creates hard link for test file with hardlink as the name\
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ ln -s test linksoft  
+\f0\b\fs58 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sl560\sa321\partightenfactor0
+\cf6 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\b0\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 -rw-rw-r--. 2 ec2-user ec2-user   312 Apr  8 16:24 \cf13 \cb14 hardlink\cf9 \cb8 \
+lrwxrwxrwx. 1 ec2-user ec2-user     4 Apr  8 16:25 \cf7 linksoft\cf9  -> test\
+-rw-rw-r--. 1 ec2-user ec2-user   386 Apr  8 15:04 output\
+-rw-rw-r--. 2 ec2-user ec2-user   312 Apr  8 16:24 \cf13 \cb14 test
+\f0\b\fs58 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sl364\sa260\partightenfactor0
+
+\b0\fs36 \cf6 \
+tail -f logfile # monitoring the log file and updates/events will reflect as soon as they happen\
+BACKUP AND COMPRESSING\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ tar -cvpzf back_tar.gz /home/ec2-user/
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sl364\sa260\partightenfactor0
+\cf6 c create a new archive or replace if already existing - back_tar.gz\
+v verbose\
+p retain the permissions as is\
+z compress \
+f - create new file in the filesystem\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.\
+  tar -tvf archive.tar         # List all files in archive.tar verbosely.\
+  tar -xf archive.tar          # Extract all files from archive.tar.\
+\
+\pard\pardeftab720\sl364\sa260\partightenfactor0
+
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+bzip2 back_tar # creates back_tar.bz2 which occupies less memory\
+\
+bzip2 # best compression ratio but more CPU resource usage\
+gzip # less compression ratio and less CPU resource usage\
+zip #  \
+7z # Relatively good compression ratio\
+\
+DATE FORMAT\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ echo date.$(date +%F)\
+date.2018-04-08\
+\pard\pardeftab720\sl364\sa260\partightenfactor0
+
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 echo date.$(date +%T)\
+date.18:28:48\
+\pard\pardeftab720\sl364\sa260\partightenfactor0
+
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 crontab -u ec2-user -e #creating crons for user ec2-user
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f2 \cf15 \cb16 \outl0\strokewidth0 \strokec15 \
+# Edit this file to introduce tasks to be run by cron.\
+# \
+# Each task to run has to be defined through a single line\
+# indicating with different fields when the task will be run\
+# and what command to run for the task\
+# \
+# To define the time you can provide concrete values for\
+# minute (m), hour (h), day of month (dom), month (mon),\
+# and day of week (dow) or use '*' in these fields (for 'any').# \
+# Notice that tasks will be started based on the cron's system\
+# daemon's notion of time and timezones.\
+# \
+# Output of the crontab jobs (including errors) is sent through\
+# email to the user the crontab file belongs to (unless redirected).\
+# \
+# For example, you can run a backup of all your user accounts\
+# at 5 a.m every week with:\
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/\
+# \cf17 \cb18 \outl0\strokewidth0 @hourly tar -zcf /var/backups/home.tgz /home/\
+\pard\pardeftab720\sl300\partightenfactor0
+\cf17 \cb18 # @monthly tar -zcf /var/backups/home.tgz /home/\
+# @daily tar -zcf /var/backups/home.tgz /home/\cf15 \cb16 \outl0\strokewidth0 \strokec15 \
+\pard\pardeftab720\sl300\partightenfactor0
+\cf15 # For more information see the manual pages of crontab(5) and cron(8)\
+# \
+# m h  dom mon dow   command\
+\pard\pardeftab720\sl364\sa260\partightenfactor0
+
+\f0 \cf6 \cb1 \outl0\strokewidth0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 # For details see man 4 crontabs\
+\
+# Example of job definition:\
+# .---------------- minute (0 - 59)\
+# |  .------------- hour (0 - 23)\
+# |  |  .---------- day of month (1 - 31)\
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...\
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat\
+# |  |  |  |  |\
+# *  *  *  *  * user-name  command to be executed
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sl364\sa260\partightenfactor0
+\cf6 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 # ls /etc/ | grep cron\
+ana
+\f3\b \cf19 \cb8 cron
+\f2\b0 \cf9 \cb8 tab\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\b \cf19 \cb8 cron
+\f2\b0 \cf9 \cb8 .d\
+
+\f3\b \cf19 \cb8 cron
+\f2\b0 \cf9 \cb8 .daily\
+
+\f3\b \cf19 \cb8 cron
+\f2\b0 \cf9 \cb8 .deny\
+
+\f3\b \cf19 \cb8 cron
+\f2\b0 \cf9 \cb8 .hourly\
+
+\f3\b \cf19 \cb8 cron
+\f2\b0 \cf9 \cb8 .monthly\
+
+\f3\b \cf19 \cb8 cron
+\f2\b0 \cf9 \cb8 tab\
+
+\f3\b \cf19 \cb8 cron
+\f2\b0 \cf9 \cb8 .weekly\
+\pard\pardeftab720\sl364\sa260\partightenfactor0
+
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 #  ps aux | grep cron\
+root       939  0.0  0.1 126264  1708 ?        Ss   00:25   0:02 /usr/sbin/
+\f3\b \cf19 \cb8 cron
+\f2\b0 \cf9 \cb8 d -n
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\sl364\partightenfactor0
+
+\b \cf6 *********Service crond restart *********** \
+
+\b0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ tail -f /var/log/cron
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1   Look for problems\
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 $ tail -f /var/log/messages 
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 Look for problems\
+\
+USER MANAGEMENT\
+ \
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 # cat /etc/passwd
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1  Lists all users \
+x - pasword encrypted, 1000: uid, 1000 -gid , cloud - group , /home/ec2-user - home directory , shell\
+\
+
+\f2\fs32 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 cat /etc/passwd | grep ec2*\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 ec2-user:x:1000:1000:Cloud User:/home/ec2-user:/bin/bash
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\
+ls /etc/shadow\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\b\fs32 \cf19 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 ec2
+\f2\b0 \cf9 \cb8 -user:!!:17620:0:99999:7:::
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 If user faces issue, /etc/shadow is the first place to look\
+\cf6 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs32 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 # cat /etc/passwd | grep ec2* && cat /etc/shadow | grep ec2*\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\b \cf19 \cb8 ec2
+\f2\b0 \cf9 \cb8 -user:x:1000:1000:Cloud User:/home/
+\f3\b \cf19 \cb8 ec2
+\f2\b0 \cf9 \cb8 -user:/bin/bash\
+
+\f3\b \cf19 \cb8 ec2
+\f2\b0 \cf9 \cb8 -user:!!:17620:0:99999:7:::
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs42 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 useradd -c "Full name" name\
+# passwd -e name
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1   with this command user is prompted to change password on first login\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf6 \ul \ulc6 \
+passwd for user \'93name\'94 is dntrh12345\ulnone \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 # cat /etc/login.defs
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 . Inside this config file we have all defaults set during user creation or group creation\
+\
+
+\f1\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 [root@ip-172-31-27-197 ec2-user]# id name\
+uid=1001(name) gid=1001(name) groups=1001(name)
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 .   Complete info about user \
+\
+
+\f1\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 # groupadd -g 1003 grp2
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1  #group add with Gid 1003\
+\
+
+\f1\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 usermod -aG secondary_group name
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 . -aG appends the group to the list\
+
+\f1\fs40 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0 uid=1001(name) gid=1005(sec_group) groups=1005(sec_group),1006(secondary_group)\
+\
+[root@ip-172-31-27-197 etc]# groupdel\
+Usage: groupdel [options] GROUP\
+\
+Options:\
+  -h, --help                    display this help message and exit\
+  -R, --root CHROOT_DIR         directory to chroot into\
+\
+[root@ip-172-31-27-197 etc]# userdel\
+Usage: userdel [options] LOGIN\
+\
+Options:\
+  -f, --force                   force some actions that would fail otherwise\
+                                e.g. removal of user still logged in\
+                                or files, even if not owned by the user\
+  -h, --help                    display this help message and exit\
+  -r, --remove                  remove home directory and mail spool\
+  -R, --root CHROOT_DIR         directory to chroot into\
+  -Z, --selinux-user            remove any SELinux user mapping for the user\
+\
+[root@ip-172-31-27-197 etc]# \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+
+\b \ul \
+Interface network:\
+\
+
+\b0 \ulnone ip addr show\
+ip link show\
+ip route\
+ip -s addr \
+\
+
+\b \ul File partitions:\
+
+\b0 \ulnone XFS	- FASTEST\
+Ext4 - slow but high volumes of data\
+VFAT - FOR usb drives\
+
+\b \ul \
+# fdisk - l\
+\
+\ulnone #cat /proc/partitions\
+
+\b0 \
+#fdisk \
+    Enters command prompt and shows options to choose and actions to perform\
+\
+n - creates new partition\
+  Primary partition and secondary partitions\
+
+\b note****** : 4 primary max and then we will create secondary \ul \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f4\b0\fs44 \cf20 \cb21 \kerning1\expnd0\expndtw0 \ulnone \CocoaLigature0 /etc/my.cnf
+\f0\b\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\ul \ulc6 \CocoaLigature1  
+\b0 \ulnone Config file for mysql database\
+\
+vi /etc/my.cnf outputs the below result, where we have all the datadir and socket details\
+\
+\
+
+\f4\fs44 \cf20 \cb21 \kerning1\expnd0\expndtw0 \CocoaLigature0 [mysqld]\
+datadir=/var/lib/mysql\
+socket=/var/lib/mysql/mysql.sock\
+# Disabling symbolic-links is recommended to prevent assorted security risks\
+symbolic-links=0\
+# Settings user and group are ignored when systemd is used.\
+# If you need to run mysqld under a different user or group,\
+# customize your systemd unit file for mariadb according to the\
+# instructions in http://fedoraproject.org/wiki/Systemd\
+\
+[mysqld_safe]\
+log-error=/var/log/mariadb/mariadb.log\
+pid-file=/var/run/mariadb/mariadb.pid\
+\
+#\
+# include all files from the config directory\
+#\
+!includedir /etc/my.cnf.d
+\f0\fs36 \cf6 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\
+\pard\pardeftab720\sl360\sa360\partightenfactor0
+
+\f5\fs32 \cf22 \cb23 \outl0\strokewidth0 \strokec22 To backup a MySQL database we need to know a name of the specific database we would liken to backup. Let's assume that we are going to backup a database named mysql-data.\
+\pard\pardeftab720\sl240\partightenfactor0
+
+\f3\b\fs35\fsmilli17800 \cf22 \cb24 $ mysqldump -u root -p mysql-data  mysql-data-backup.sql\
+\pard\pardeftab720\sl360\sa360\partightenfactor0
+
+\f5\b0\fs32 \cf22 \cb23 The previous command will dump / backup database mysql-data into a file mysql-data-backup.sql. -u option specifies a user with access to the mysql-data database and -p option will prompt for a root password.\'a0\cb1 \uc0\u8232 \cb23 To restore a MySQL database from a backup file the following command can be used:\
+\pard\pardeftab720\sl240\partightenfactor0
+
+\f3\b\fs35\fsmilli17800 \cf22 \cb24 $ mysql -u root -p mysql-data < mysql-data-backup.sql\
+\pard\pardeftab720\sl360\sa360\partightenfactor0
+
+\f5\b0\fs32 \cf22 \cb23 This will restore a database from a backup file to a destination database mysql-data. Usage of -p and -u options with mysql command is the same as in previous command.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs36 \cf6 \cb1 \outl0\strokewidth0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs42 \cf9 \cb8 \kerning1\expnd0\expndtw0 \CocoaLigature0 ec2-user:x:1000:1000:Cloud User:/home/ec2-user:/bin/bash}
