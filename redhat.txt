@@ -1,0 +1,613 @@
+ED HAT LINUX  - paid support
+
+Centos — free open source- copy of RedHat slight variation 
+
+Fedora - desktop users - free open source, not great for servers
+
+Routers - run on derivates of linux both Cisco , juniper 
+  - reason is being free
+  - support is paid
+  - far more secure than windows/Mac - less used for desktops(so no threats), root privileges are needed to install any software
+  - network devices- tvs ,mobiles, routers, smart computers, etc
+  - Gamers - not for gamers - graphics are not too high defined
+  - Banks specially all servers, stock markets servers …most of the world runs on linux
+  - customizable … fedora(Desktop users)
+
+ls —help
+
+ls ` —takes to home directory of current logged in user
+ls -R /directory/— list all directories and sub directories
+
+
+
+
+Man and help command
+  Man tells you what individual argument is but help will show only command syntax
+
+chown - - help
+man chmod
+
+locate and find are used to find a file 
+locate - faster than find …db should be updated 
+—locate filename
+find - when u know in specific, find /etc/ -name “file.txt”
+
+chmod -R 755 /etc/. —changes permission of all files under the folder
+
+chown root:root filename
+
+rm -rf foldername —— recursively removes all files and folders under foldername directory
+
+Debian - UBUNTU uses apt-get package manager
+
+rpm is the extension for software packages and -rpm -q packagename syntax to check if the package is already installed or not
+
+ll [abcd]love —will match alove,blove,clove,dlove
+
+ll [!abcd]love — will exclude above,blove,clove,dlove
+
+grep , egrep
+egrep “pattern1/pattern2/pattern3” or grep [456] or grep[1-8] 
+
+INPUT OUTPUT Redirection
+Stdin (0)
+stdout (1)
+Stderr (2)
+
+whoami > output
+ps -ef | grep "ec2-user" 2> output
+
+go to home directory of current user  : cd ~/
+cd /home/$(whoami)   : will take u to loggedin users home directory
+
+awk : delimiters spaces,commas,any symbols 
+
+ps -ef | grep "ec2-user" | awk -F" " '{print $2}'
+ps -ef | grep "ec2-user" | awk -F" " '{print $2}'>> text | cat text
+
+
+Terminal Text editors
+vi - not user friendly but most powerful
+vim(modified version of vi editor),
+nano  
+
+Vim : keys 
+Command  mode and insert mode
+
+dd : cut the line 3dd, cut three lines
+yy : yank or copy the line 3yy, copy three lines
+p : paste the line
+
+Find a pattern in file : —— 
+    
+:/searchpattern top to bottom search
+:?searchpatter bottom to top searches
+
+$ end of the line
+u undo changes made
+
+Search and replace
+ :se nu > numbering the lines in the line
+:1,$s/pattern/replace/gi   g-global ,i-ignore case
+
+:1,$s/ec2-user/replace/gi
+
+      1 root      2518   930  0 11:25 ?        00:00:00 sshd: replace [priv]
+      2 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0
+      3 replace  2522  2521  0 11:25 pts/0    00:00:00 -bash
+      4 replace  3314  2522  0 12:49 pts/0    00:00:00 ps -ef
+      5 replace  3315  2522  0 12:49 pts/0    00:00:00 grep --color=auto replace
+      6 root      2518   930  0 11:25 ?        00:00:00 sshd: replace [priv]
+      7 
+      8 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0
+      9 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0
+     10 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0
+     11 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0
+     12 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0
+     13 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0
+     14 replace  2521  2518  0 11:25 ?        00:00:00 sshd: replace@pts/0
+     15 c2-user  3676  2522  0 15:01 pts/0    00:00:00 grep --color=auto ec2-use        r/bash
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+:se nu
+
+:se nu   - gives numbering to the lines 
+:1,10d - deletes lines one to 10
+
+Search and replace
+:1,4s/Chassis/love
+
+Search and delete the word which has word love
+                                                             
+:1,5g/love/d
+
+Configure Global Security
+File system
+cd / #takes u to root directory 
+bin   data  etc   lib    media  opt   root  sbin  sys  usr
+boot  dev   home  lib64  mnt    proc  run   srv   tmp  var 
+
+bin # consists of all binaries, I mean all the programs
+
+examples: Yum,awk,grep ,etc
+
+dev # devices, virtual directory ..it has hardware listed when we have 
+
+home #all users have own directory to save files 
+lib # libraries are stored or usr directory also
+mnt # temp mounting place devices or drives 
+proc # files for trouble shooting like uptime,etc
+tmp # temp folders go
+var # website is inside www under var, it has log files, cron jobs..
+boot #consists of all the files that system needs for booting
+etc #all config files are present, user,group records are present
+/etc/group #group entry is found here
+/etc/passwd #user entry is found here
+/etc/shadow #encrypted password
+media # harddisk
+usr # unix system resources
+hardlink and softlink
+$ ln test hardlink  creates hard link for test file with hardlink as the name
+$ ln -s test linksoft  
+
+-rw-rw-r--. 2 ec2-user ec2-user   312 Apr  8 16:24 hardlink
+lrwxrwxrwx. 1 ec2-user ec2-user     4 Apr  8 16:25 linksoft -> test
+-rw-rw-r--. 1 ec2-user ec2-user   386 Apr  8 15:04 output
+-rw-rw-r--. 2 ec2-user ec2-user   312 Apr  8 16:24 test
+
+tail -f logfile # monitoring the log file and updates/events will reflect as soon as they happen
+BACKUP AND COMPRESSING
+$ tar -cvpzf back_tar.gz /home/ec2-user/
+c create a new archive or replace if already existing - back_tar.gz
+v verbose
+p retain the permissions as is
+z compress 
+f - create new file in the filesystem
+tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.
+  tar -tvf archive.tar         # List all files in archive.tar verbosely.
+  tar -xf archive.tar          # Extract all files from archive.tar.
+
+
+bzip2 back_tar # creates back_tar.bz2 which occupies less memory
+
+bzip2 # best compression ratio but more CPU resource usage
+gzip # less compression ratio and less CPU resource usage
+zip #  
+7z # Relatively good compression ratio
+
+DATE FORMAT
+$ echo date.$(date +%F)
+date.2018-04-08
+
+echo date.$(date +%T)
+date.18:28:48
+
+crontab -u ec2-user -e #creating crons for user ec2-user
+
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# @hourly tar -zcf /var/backups/home.tgz /home/
+# @monthly tar -zcf /var/backups/home.tgz /home/
+# @daily tar -zcf /var/backups/home.tgz /home/
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+# ls /etc/ | grep cron
+anacrontab
+cron.d
+cron.daily
+cron.deny
+cron.hourly
+cron.monthly
+crontab
+cron.weekly
+
+#  ps aux | grep cron
+root       939  0.0  0.1 126264  1708 ?        Ss   00:25   0:02 /usr/sbin/crond -n
+*********Service crond restart *********** 
+
+$ tail -f /var/log/cron  Look for problems
+$ tail -f /var/log/messages Look for problems
+
+USER MANAGEMENT
+ 
+# cat /etc/passwd Lists all users 
+x - pasword encrypted, 1000: uid, 1000 -gid , cloud - group , /home/ec2-user - home directory , shell
+
+cat /etc/passwd | grep ec2*
+
+ec2-user:x:1000:1000:Cloud User:/home/ec2-user:/bin/bash
+
+ls /etc/shadow
+
+ec2-user:!!:17620:0:99999:7:::
+
+If user faces issue, /etc/shadow is the first place to look
+
+# cat /etc/passwd | grep ec2* && cat /etc/shadow | grep ec2*
+ec2-user:x:1000:1000:Cloud User:/home/ec2-user:/bin/bash
+ec2-user:!!:17620:0:99999:7:::
+
+useradd -c "Full name" name
+# passwd -e name  with this command user is prompted to change password on first login
+
+passwd for user “name” is dntrh12345
+
+# cat /etc/login.defs. Inside this config file we have all defaults set during user creation or group creation
+
+[root@ip-172-31-27-197 ec2-user]# id name
+uid=1001(name) gid=1001(name) groups=1001(name).   Complete info about user 
+
+# groupadd -g 1003 grp2 #group add with Gid 1003
+
+usermod -aG secondary_group name. -aG appends the group to the list
+uid=1001(name) gid=1005(sec_group) groups=1005(sec_group),1006(secondary_group)
+
+[root@ip-172-31-27-197 etc]# groupdel
+Usage: groupdel [options] GROUP
+
+Options:
+  -h, --help                    display this help message and exit
+  -R, --root CHROOT_DIR         directory to chroot into
+
+[root@ip-172-31-27-197 etc]# userdel
+Usage: userdel [options] LOGIN
+
+Options:
+  -f, --force                   force some actions that would fail otherwise
+                                e.g. removal of user still logged in
+                                or files, even if not owned by the user
+  -h, --help                    display this help message and exit
+  -r, --remove                  remove home directory and mail spool
+  -R, --root CHROOT_DIR         directory to chroot into
+  -Z, --selinux-user            remove any SELinux user mapping for the user
+
+[root@ip-172-31-27-197 etc]# 
+
+
+Interface network:
+
+ip addr show
+ip link show
+ip route
+ip -s addr 
+
+File partitions:
+XFS	- FASTEST
+Ext4 - slow but high volumes of data
+VFAT - FOR usb drives
+
+# fdisk - l
+
+#cat /proc/partitions
+
+#fdisk 
+    Enters command prompt and shows options to choose and actions to perform
+
+n - creates new partition
+  Primary partition and secondary partitions
+note****** : 4 primary max and then we will create secondary 
+
+/etc/my.cnf Config file for mysql database
+
+vi /etc/my.cnf outputs the below result, where we have all the datadir and socket details
+
+
+[mysqld]
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+# Settings user and group are ignored when systemd is used.
+# If you need to run mysqld under a different user or group,
+# customize your systemd unit file for mariadb according to the
+# instructions in http://fedoraproject.org/wiki/Systemd
+
+[mysqld_safe]
+log-error=/var/log/mariadb/mariadb.log
+pid-file=/var/run/mariadb/mariadb.pid
+
+#
+# include all files from the config directory
+#
+!includedir /etc/my.cnf.d
+
+To backup a MySQL database we need to know a name of the specific database we would like to backup. Let's assume that we are going to backup a database named mysql-data.
+$ mysqldump -u root -p mysql-data  mysql-data-backup.sql
+The previous command will dump / backup database mysql-data into a file mysql-data-backup.sql. -u option specifies a user with access to the mysql-data database and -p option will prompt for a root password.  To restore a MySQL database from a backup file the following command can be used:
+$ mysql -u root -p mysql-data < mysql-data-backup.sql
+This will restore a database from a backup file to a destination database mysql-data. Usage of -p and -u options with mysql command is the same as in previous command.
+Braces ($var vs. ${var})
+In most cases, $var and ${var} are the same:
+var=foo
+echo $var
+# foo
+echo ${var}
+# foo
+The braces are only needed to resolve ambiguity in expressions:
+var=foo
+echo $varbar
+# Prints nothing because there is no variable 'varbar'
+echo ${var}bar
+# foobar
+Quotes ($var vs. "$var" vs. "${var}")
+When you add double quotes around a variable, you tell the shell to treat it as a single word, even if it contains whitespaces:
+var="foo bar"
+for i in "$var"; do # Expands to 'for i in "foo bar"; do...'
+    echo $i         #   so only runs the loop once
+done
+# foo bar
+Contrast that behavior with the following:
+var="foo bar"
+for i in $var; do # Expands to 'for i in foo bar; do...'
+    echo $i       #   so runs the loop twice, once for each argument
+done
+# foo
+# bar
+As with $var vs. ${var}, the braces are only needed for disambiguation, for example:
+var="foo bar"
+for i in "$varbar"; do # Expands to 'for i in ""; do...' since there is no
+    echo $i            #   variable named 'varbar', so loop runs once and
+done                   #   prints nothing (actually "")
+
+var="foo bar"
+for i in "${var}bar"; do # Expands to 'for i in "foo barbar"; do...'
+    echo $i              #   so runs the loop once
+done
+# foo barbar
+Note that "${var}bar" in the second example above could also be written "${var}"bar, in which case you don't need the braces anymore, i.e. "$var"bar. However, if you have a lot of quotes in your string these alternative forms can get hard to read (and therefore hard to maintain). This pageprovides a good introduction to quoting in Bash.
+Arrays ($var vs. $var[@] vs. ${var[@]})
+Now for your array. According to the bash manual:
+Referencing an array variable without a subscript is equivalent to referencing the array with a subscript of 0.
+In other words, if you don't supply an index with [], you get the first element of the array:
+foo=(a b c)
+echo $foo
+# a
+Which is exactly the same as
+foo=(a b c)
+echo ${foo}
+# a
+To get all the elements of an array, you need to use @ as the index, e.g. ${foo[@]}. The braces are required with arrays because without them, the shell would expand the $foo part first, giving the first element of the array followed by a literal [@]:
+foo=(a b c)
+echo ${foo[@]}
+# a b c
+echo $foo[@]
+# a[@]
+This page is a good introduction to arrays in Bash.
+Quotes revisited (${foo[@]} vs. "${foo[@]}")
+You didn't ask about this but it's a subtle difference that's good to know about. If the elements in your array could contain whitespace, you need to use double quotes so that each element is treated as a separate "word:"
+foo=("the first" "the second")
+for i in "${foo[@]}"; do # Expands to 'for i in "the first" "the second"; do...'
+    echo $i              #   so the loop runs twice
+done
+# the first
+# the second
+Contrast this with the behavior without double quotes:
+foo=("the first" "the second")
+for i in ${foo[@]}; do # Expands to 'for i in the first the second; do...'
+    echo $i            #   so the loop runs four times!
+done
+# the
+# first
+# the
+# second
+
+
+
+ECHO 
+
+echo -n what is your name:
+read name
+echo 
+
+echo -n “how are you:   “
+
+echo "please enter your name: \c"
+
+READ
+
+
+who | wc -l # number of users logged in
+
+List of files in the current directory
+ram	ramesh #names of the files in the current directory
+  ls ram rajesh # as rajesh file or directory is not existing …output has both error and standard output for ram file
+  
+ls ram rajesh > result 2>&1 # redirect output to result file and redirect standard to the same result file indicated as &1
+
+find . -name filename > result 2>errors # result file has all the output and errors file has error
+
+find . -name filename 2>/dev/null #special character device (/dev/null)
+  
+If you run a program and log off then the program will be killed but nohup will keep it running even after logging off
+
+sleep 1000 & #run the sleep program in the background with the help of & at the end of command
+
+Special characters
+
+$ , [, ], * ,# are special characters and space is also special character which is used to separate parameters from each other
+
+echo the price of the apple is $10 # prints the price of the apple is 0 as $ is treated as special character in shell so in order to avoid it we use 
+
+echo the price of the apple is \$10
+
+echo the comments are followed by # in the shell programs # prints the comments are followed by  
+
+echo the comments are followed by “#” in the shell programs # prints complete sentence including #
+
+echo “the price of the apple is $10” #prints the price of the apple is 0
+
+echo ‘the price of the apple is $10’ # prints the sentence
+
+echo “$LOGNAME made \$1000 in `date + %B` “   #command between the “ ` “ is executed first and then added to the line
+
+FOUR WAYS TO RUN SHELL SCRIPT
+
+myscript   #Directly runs a script by creating new shell and variables will be deleted once the script is done with execution
+
+sh myscript  # myscript does not need to be made executable 
+
+. myscript    #runs in the same shell and variables are persistent 
+
+exec myscript #terminates the shell once the script is executed
+
+
+#shell practice
+
+echo "print your name: \c"
+read name
+echo hello Mr.$name
+
+
+:e# 
+
+:se nu #numbering to the lines in shell script
+
+:! ls -l #execute command within vi mode
+:! chmod +x % # makes the current file executable 
+:!! #previous command 
+
+variable = xyz
+export variable # this export will make the variable as environment variable and makes it available for all subsequent scripts
+
+. myscript # will make the script save its variables as environment variables when executed using “.” operator
+
+
+Running two commands on the same line using “ ; “
+
+pwd; ls
+
+#If the length of the command is too long you can wrap to new line using “ \ ”
+
+echo This line is to explain the \
+above statement 
+
+Variable is a small, piece of memory that can be assigned values. A small box containing contents
+
+? is 
+
+(pwd;ls;who;ls-al) | more #allow all commands execute in one line	
+
+$? shows exit code for previous command
+
+
+Conditionals
+
+command1 && command2 # command2 will run only if command1 completed with exit status 0
+
+Command3 || command4 #command4 will run only if command3 exits with status code other than 0 .
+
+ls file1 && cp file1 \tmp #if file1 is present copy file1 to tmp directory
+
+diff file1 file2 || echo the files are different #the diff command exits with status 1 so this echos the files are different
+
+if diff file1 file2 >/dev/null
+then
+      echo the files are same
+      rm file2
+      exit
+fi
+
+if diff file1 file2 >/dev/null
+then
+      echo the files are same
+      rm file2
+else 
+     echo the files are diff
+     echo review the differences
+     diff file1 file2
+fi
+
+#check for file existence
+
+if ls file1 >/dev/null
+then
+       :   # “:” do nothing command
+else
+      echo file does not exists
+      exit
+fi
+
+Bourneshell doesn’t allow comparisons so there is another program test for all sort of comparisons.
+
+var1 = 10
+test $var1 = 20
+echo $?
+1
+
+var1 =    #not set to any value the test should be followed by “$var1”
+test “$var1” = 20
+
+test “$var1” #returns true if $var1 is zero
+test -z “$var1” # returns true if $var1 is not zero
+test -f filename #if file exists
+test -d directory #if directory exists
+test -s filename #if filename exists and size is greater than 0
+test -r | w | x filename
+
+dir = /etc/example
+test -d $dir
+$?
+
+test -f file -a -w file
+test expression1 -a expression2
+test expression1 -o expression2 # test is replaced by [ ]
+
+expr 1 + 2 # expr should have spaces for its arguments
+
+C = `expr $a / $b`
+print $c
+
+Common filters
+
+cat #None
+More #Pagination
+grep #removal of lines that contain certain text
+
+grep wordsearch *.txt #finds wordsearch in all txt files
+grep `^abc` samplefile
+grep `abc$` samplefile
+
+wc #count no of lines, words and characters
+sort #sorting
+tee #duplication and write to files and screen at the same time
+sed #basic editing
+Awk #anything
+
+
+
+
+ec2-user:x:1000:1000:Cloud User:/home/ec2-user:/bin/bash:
