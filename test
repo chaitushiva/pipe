@@ -1,0 +1,5 @@
+#shell practice
+
+echo "print your name: \c"
+read name
+echo hello Mr.$name

@@ -1,0 +1,226 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fmodern\fcharset0 Courier;\f2\fswiss\fcharset0 Helvetica;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\froman\fcharset0 Times-Italic;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red255\green255\blue255;\red60\green98\blue120;
+\red31\green32\blue33;\red10\green82\blue135;\red173\green45\blue55;\red245\green245\blue247;\red98\green9\blue1;
+\red251\green0\blue7;\red210\green9\blue5;\red109\green109\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c20000\c20000\c20000;\cssrgb\c100000\c100000\c100000;\cssrgb\c29412\c45882\c54510;
+\cssrgb\c16078\c16863\c17255;\cssrgb\c0\c40000\c60000;\cssrgb\c74118\c25490\c27843;\cssrgb\c96863\c96863\c97647;\cssrgb\c46667\c6667\c0;
+\cssrgb\c100000\c0\c0\c4706;\cssrgb\c86667\c13333\c0;\cssrgb\c50196\c50196\c50196;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
+\ls1\ilvl0
+\f0\fs28 \cf2 \cb3 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Jenkins will be launched as a daemon on startup. See\'a0
+\f1 /etc/init.d/jenkins
+\f0 \'a0for more details.\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 The '
+\f1 jenkins
+\f0 ' user is created to run this service. If you change this to a different user via the config file, you must change the owner of /var/log/jenkins, /var/lib/jenkins, and /var/cache/jenkins.\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Log file will be placed in\'a0
+\f1 /var/log/jenkins/jenkins.log
+\f0 . Check this file if you are troubleshooting Jenkins.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
+\ls1\ilvl0
+\f1 \cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 /etc/sysconfig/jenkins
+\f0 \'a0will capture configuration parameters for the launch.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 By default, Jenkins listen on port 8080. Access this port with your browser to start configuration. \'a0Note that the built-in firewall may have to be opened to access this port from other computers. \'a0(See\'a0{\field{\*\fldinst{HYPERLINK "http://www.cyberciti.biz/faq/disable-linux-firewall-under-centos-rhel-fedora/"}}{\fldrslt \cf4 \strokec4 http://www.cyberciti.biz/faq/disable-linux-firewall-under-centos-rhel-fedora/}}\'a0for instructions how to disable the firewall permanently)\cb1 \
+\ls1\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 A Jenkins RPM repository is added in\'a0
+\f1 /etc/yum.repos.d/jenkins.repo
+\f0 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+Jenkins on AWS REDHAT\
+\
+Username : Jenkins\
+Password : iloveu\
+Full name : Jenkins\
+Email:  johnny2080@gmail.com\
+\
+\
+\
+Jenkins Job scheduling\
+\
+Build triggers:\
+ >build after other projects are build\
+ > build periodically \
+\
+305-335-7806\
+\
+* * * * *\
+* 9 15 * *\
+\
+Min hours day of the month month day of the week\
+\
+\
+Jenkins administration including creating and managing users via configure global security.\
+\
+\
+Under the authorization \'97 matrix based security\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+
+\fs28 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 A 
+\b Pipeline
+\b0  is a user-defined model of a CD pipeline. A Pipeline\'92s code defines your entire build process, which typically includes stages for building an application, testing it and then delivering it.
+\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\fs28 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 ******
+\b Pipelines can survive both planned and unplanned restarts of the Jenkins master.\
+******The Pipeline plugin supports custom extensions to its DSL\'a0
+\fs21 [{\field{\*\fldinst{HYPERLINK "https://jenkins.io/doc/book/pipeline/#_footnote_1"}}{\fldrslt \cf6 \strokec6 1}}]
+\fs28 \'a0and multiple options for integration with other plugins.
+\b0 \
+
+\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\pard\pardeftab720\sl320\sa240\partightenfactor0
+
+\fs28 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Creating a\'a0
+\f3\fs25\fsmilli12600 \cf7 \cb8 \strokec7 Jenkinsfile
+\f2\fs28 \cf5 \cb3 \strokec5 \'a0and committing it to source control provides a number of immediate benefits:\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl320\partightenfactor0
+\ls2\ilvl0\cf5 \cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Automatically creates a Pipeline build process for all branches and pull requests.\cb1 \uc0\u8232 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Code review/iteration on the Pipeline (along with the remaining source code).\cb1 \uc0\u8232 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Audit trail for the Pipeline.\cb1 \uc0\u8232 \
+\ls2\ilvl0\cb3 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\'95	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 Single source of truth\'a0
+\fs21 [{\field{\*\fldinst{HYPERLINK "https://jenkins.io/doc/book/pipeline/#_footnote_3"}}{\fldrslt \cf6 \strokec6 3}}]
+\fs28 \'a0for the Pipeline, which can be viewed and edited by multiple members of the project.\cb1 \uc0\u8232 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+\pard\pardeftab720\sl320\sa240\partightenfactor0
+
+\fs28 \cf5 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 A\'a0
+\f3\fs25\fsmilli12600 \cf7 \cb8 \strokec7 Jenkinsfile
+\f2\fs28 \cf5 \cb3 \strokec5 \'a0can be written using two types of syntax - Declarative and Scripted.\cb1 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f4\i\fs24 \cf5 Jenkinsfile (Declarative Pipeline)\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f3\i0\fs25\fsmilli12600 \cf5 pipeline \{ \
+    agent any \
+    stages \{\
+        stage(\cf9 \cb10 \strokec9 '\cf11 \strokec11 Build\cf9 \strokec9 '\cf5 \cb1 \strokec5 ) \{ \
+            steps \{ \
+                sh \cf9 \cb10 \strokec9 '\cf11 \strokec11 make\cf9 \strokec9 '\cf5 \cb1 \strokec5  \
+            \}\
+        \}\
+        stage(\cf9 \cb10 \strokec9 '\cf11 \strokec11 Test\cf9 \strokec9 '\cf5 \cb1 \strokec5 )\{\
+            steps \{\
+                sh \cf9 \cb10 \strokec9 '\cf11 \strokec11 make check\cf9 \strokec9 '\cf5 \cb1 \strokec5 \
+                junit \cf9 \cb10 \strokec9 '\cf11 \strokec11 reports/**/*.xml\cf9 \strokec9 '\cf5 \cb1 \strokec5  \
+            \}\
+        \}\
+        stage(\cf9 \cb10 \strokec9 '\cf11 \strokec11 Deploy\cf9 \strokec9 '\cf5 \cb1 \strokec5 ) \{\
+            steps \{\
+                sh \cf9 \cb10 \strokec9 '\cf11 \strokec11 make publish\cf9 \strokec9 '\cf5 \cb1 \strokec5 \
+            \}\
+        \}\
+    \}\
+\}\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat3 \tamarb300 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5902\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt70 \clpadl0 \clpadb70 \clpadr0 \gaph\cellx4320
+\clmrg \clvertalc \clshdrawnil \clwWidth5902\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt70 \clpadl0 \clpadb70 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl300\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://jenkins.io/doc/book/pipeline/syntax#declarative-pipeline"}}{\fldrslt \cf6 \strokec6 pipeline}}
+\f2\fs28 \'a0is Declarative Pipeline-specific syntax that defines a "block" containing all content and instructions for executing the entire Pipeline.\cell 
+\pard\intbl\itap1\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat3 \tamarb300 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5482\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl210 \clpadr210 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9777\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt70 \clpadl0 \clpadb70 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+\cf5 \cell 
+\pard\intbl\itap1\pardeftab720\sl300\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://jenkins.io/doc/book/pipeline/syntax#agent"}}{\fldrslt 
+\f3\fs25\fsmilli12600 \cf6 \strokec6 agent}}\'a0is Declarative Pipeline-specific syntax that instructs Jenkins to allocate an executor (on a node) and workspace for the entire Pipeline.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat3 \tamarb300 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5482\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl210 \clpadr210 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9777\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt70 \clpadl0 \clpadb70 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+\cf5 \cell 
+\pard\intbl\itap1\pardeftab720\sl300\partightenfactor0
+
+\f3\fs25\fsmilli12600 \cf7 \cb8 \strokec7 stage
+\f2\fs28 \cf5 \cb1 \strokec5 \'a0is a syntax block that describes a\'a0{\field{\*\fldinst{HYPERLINK "https://jenkins.io/doc/book/pipeline/#stage"}}{\fldrslt \cf6 \strokec6 stage of this Pipeline}}. Read more about\'a0
+\f3\fs25\fsmilli12600 \cf7 \cb8 \strokec7 stage
+\f2\fs28 \cf5 \cb1 \strokec5 \'a0blocks in Declarative Pipeline syntax on the\'a0{\field{\*\fldinst{HYPERLINK "https://jenkins.io/doc/book/pipeline/syntax#stage"}}{\fldrslt \cf6 \strokec6 Pipeline syntax}}\'a0page. As mentioned\'a0{\field{\*\fldinst{HYPERLINK "https://jenkins.io/doc/book/pipeline/#scripted-pipeline-fundamentals"}}{\fldrslt \cf6 \strokec6 above}},\'a0
+\f3\fs25\fsmilli12600 \cf7 \cb8 \strokec7 stage
+\f2\fs28 \cf5 \cb1 \strokec5 \'a0blocks are optional in Scripted Pipeline syntax.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat3 \tamarb300 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5482\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl210 \clpadr210 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9777\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt70 \clpadl0 \clpadb70 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+\cf5 \cell 
+\pard\intbl\itap1\pardeftab720\sl300\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://jenkins.io/doc/book/pipeline/syntax#steps"}}{\fldrslt 
+\f3\fs25\fsmilli12600 \cf6 \strokec6 steps}}\'a0is Declarative Pipeline-specific syntax that describes the steps to be run in this\'a0
+\f3\fs25\fsmilli12600 \cf7 \cb8 \strokec7 stage
+\f2\fs28 \cf5 \cb1 \strokec5 .\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat3 \tamarb300 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5482\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl210 \clpadr210 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9777\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt70 \clpadl0 \clpadb70 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+\cf5 \cell 
+\pard\intbl\itap1\pardeftab720\sl300\partightenfactor0
+
+\f3\fs25\fsmilli12600 \cf7 \cb8 \strokec7 sh
+\f2\fs28 \cf5 \cb1 \strokec5 \'a0is a Pipeline\'a0{\field{\*\fldinst{HYPERLINK "https://jenkins.io/doc/book/pipeline/syntax#steps"}}{\fldrslt \cf6 \strokec6 step}}\'a0(provided by the\'a0{\field{\*\fldinst{HYPERLINK "https://plugins.jenkins.io/workflow-durable-task-step"}}{\fldrslt \cf6 \strokec6 Pipeline: Nodes and Processes plugin}}) that executes the given shell command.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat3 \tamarb300 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5482\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl210 \clpadr210 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9777\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt70 \clpadl0 \clpadb70 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+\cf5 \cell 
+\pard\intbl\itap1\pardeftab720\sl300\partightenfactor0
+
+\f3\fs25\fsmilli12600 \cf7 \cb8 \strokec7 junit
+\f2\fs28 \cf5 \cb1 \strokec5 \'a0is another a Pipeline\'a0{\field{\*\fldinst{HYPERLINK "https://jenkins.io/doc/book/pipeline/syntax#steps"}}{\fldrslt \cf6 \strokec6 step}}\'a0(provided by the\'a0{\field{\*\fldinst{HYPERLINK "https://plugins.jenkins.io/junit"}}{\fldrslt \cf6 \strokec6 JUnit plugin}}) for aggregating test reports.\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat3 \tamarb300 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clwWidth5482\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl210 \clpadr210 \gaph\cellx4320
+\clvertalc \clshdrawnil \clwWidth9777\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt70 \clpadl0 \clpadb70 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl280\partightenfactor0
+\cf5 \cell 
+\pard\intbl\itap1\pardeftab720\sl300\partightenfactor0
+
+\f3\fs25\fsmilli12600 \cf7 \cb8 \strokec7 node
+\f2\fs28 \cf5 \cb1 \strokec5 \'a0is Scripted Pipeline-specific syntax that instructs Jenkins to execute this Pipeline (and any stages contained within it), on any available agent/node. This is effectively equivalent to\'a0
+\f3\fs25\fsmilli12600 \cf7 \cb8 \strokec7 agent
+\f2\fs28 \cf5 \cb1 \strokec5 \'a0in Declarative Pipeline-specific syntax.\cell \lastrow\row
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f3\fs25\fsmilli12600 \cf5 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f2\fs28 \cf5 \cb3 \
+}

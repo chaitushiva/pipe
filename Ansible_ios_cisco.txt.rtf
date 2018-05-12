@@ -1,0 +1,189 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red26\green26\blue26;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c13333\c13333\c13333;\cssrgb\c100000\c100000\c100000;}
+\margl1440\margr1440\vieww28600\viewh15620\viewkind0
+\deftab720
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+In my lab environment, I have a Cisco IOS router. I also have an AWS server with Ansible2\'a0installed (this was from the Ansible 'devel' branch\'a0as of March 2016).\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 My\'a0Ansible inventory has the following:\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf2 [local]\
+localhost ansible_connection=local\
+\
+[cisco]\
+pynet-rtr1 host=10.10.10.27 port=22 username=admin password=pwd\
+\
+[cisco:vars]\
+ansible_python_interpreter=~/VENV/ansible2/bin/python\
+ansible_connection=local\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f0 \cf2 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 Since I am using Cisco IOS, I will be using the ios_config module.\'a0Here is the initial playbook that I started with:\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf2 --- \
+- name: Test Cisco IOS line-by-line editing\
+  gather_facts: no\
+  hosts: cisco\
+\
+  vars:\
+    creds:  \
+        host: "\{\{ host \}\}"\
+        username: "\{\{ username \}\}"\
+        password: "\{\{ password \}\}"\
+\
+  tasks:\
+    - ios_config:\
+        provider: "\{\{ creds \}\}"\
+        lines: \
+           - logging buffered 19000\
+           - no logging console\
+        match: line \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f0 \cf2 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 This playbook will operate on the 'cisco' group which as defined in\'a0the inventory file and is a\'a0single Cisco IOS router (pynet-rtr1). The 'vars' section of the playbook defines a dictionary named 'creds' which basically consolidates the ip address (host), username, and password in a single variable. This information is pulled from the Ansible inventory file.\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 In the next section, I use the ios_config module with the provider, lines, and match arguments. Provider allows the ip address, username, and password to be passed in as a single variable. The lines argument specifies the configuration elements\'a0that must exist on the device.\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 Match is the final argument.\'a0It allows\'a0three possible values--'line', 'strict', and 'exact'. Line is the most basic matching. Basically\'a0these lines must exist in the config and the\'a0order doesn't matter. Note, there is the possibility of qualifying this with a parent which I will discuss below.\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 What does the above playbook do when executed? Basically, Ansible will SSH to the network device, retrieve the current running\'a0configuration, and check whether the two configuration lines exist. If they aren't in the configuration, they will be added. If they are in the config, then no changes will be made. Note, there is a bit more subtlety depending on the parent argument which I will detail shortly.\'a0\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 Currently the router has the following config:\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf2 pynet-rtr1#show run | inc logging\
+logging buffered 20000\
+no logging console\
+pynet-rtr1#\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f0 \cf2 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 Now, I execute the playbook:\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf2 $ ansible-playbook -i ./ansible-hosts ios_test_config.yml\
+\
+PLAY [Test Cisco IOS line-by-line editing] *******************\
+\
+TASK [ios_config] ********************************************\
+changed: [pynet-rtr1]\
+\
+PLAY RECAP ***************************************************\
+\uc0\u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 pynet-rtr1       : ok=1    changed=1    unreachable=0    failed=0   \
+\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f0 \cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 And back on the router I now have:\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf2 pynet-rtr1#show run | inc logging\
+logging buffered 19000\
+no logging console\
+pynet-rtr1#\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f0 \cf2 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 If I run the playbook again, Ansible detects that no changes need to be made.\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf2 \
+\
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 Now let's do something a bit more interesting and try to add a VLAN interface to the router. I update the playbook and append the following to the end of it (the initial task is still present).\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf2     - name: Add interface vlan127 to the config \
+      ios_config:\
+        provider: "\{\{ creds \}\}"\
+        lines:\
+          - ip address 192.168.127.1 255.255.255.0\
+          - no ip proxy-arp\
+        parents: ['interface Vlan127']\
+        match: line \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f0 \cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 Here I have added a new argument 'parents'. Parents specifies a configuration context that the lines must exist inside of. In other words, the two lines must exist inside of the interface Vlan127 section. If no parents are specified, then the configuration context is the global config.\
+\pard\pardeftab720\sl420\partightenfactor0
+\cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 At this point, interface Vlan127 doesn't exist on the router:\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf2 pynet-rtr1#show ip int brief\
+Interface         IP-Address      OK? Method Status       Protocol\
+FastEthernet0     unassigned      YES unset  down         down    \
+FastEthernet1     unassigned      YES unset  down         down    \
+FastEthernet2     unassigned      YES unset  down         down    \
+FastEthernet3     unassigned      YES unset  down         down    \
+FastEthernet4     10.220.88.20    YES NVRAM  up           up      \
+Vlan1             unassigned      YES unset  down         down    \
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f0 \cf2 \
+\
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 Now I run the playbook and observe the following:\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf2 $ ansible-playbook -i ./ansible-hosts ios_test_config.yml\
+\
+PLAY [Test Cisco IOS line-by-line editing] *******************\
+\
+TASK [ios_config] ********************************************\
+ok: [pynet-rtr1]\
+\
+TASK [Add interface vlan127 to the config] *******************\
+changed: [pynet-rtr1]\
+\
+PLAY RECAP ***************************************************\
+pynet-rtr1        : ok=2    changed=1    unreachable=0    failed=0   \
+\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f0 \cf2 \
+\pard\pardeftab720\sl320\partightenfactor0
+\cf2 And back on the router:\
+\pard\pardeftab720\sl420\partightenfactor0
+
+\f1 \cf2 pynet-rtr1#show ip int brief | inc 127\
+Vlan127         192.168.127.1   YES manual down  down\
+\
+pynet-rtr1#show run int vlan 127\
+Building configuration...\
+Current configuration : 82 bytes\
+!\
+interface Vlan127\
+ ip address 192.168.127.1 255.255.255.0\
+ no ip proxy-arp\
+end\
+}

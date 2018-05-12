@@ -1,0 +1,90 @@
+Docker containers are alternative to Vms because they are lightweight . They contain all the dependencies the application requires without the operating system
+
+A Docker image is a zipped file which is a snapshot of all the configuration parameters as well as the changes made in the base image (kernel of the OS).
+
+Angular is front end client-side framework for developing single page web applications.
+  Benifits: Quick as they load the entire DOM single time
+            The background javascript will load the content based on user interactions
+
+DevOps: is a software development approach which involved continuous development(GIT&GITHUB), continuous testing, continuous integration(JENKINS), continuous deployment(DOCKER) and continuous monitoring of software through out its software development lifecycle
+
+Dockerfile : used to create image and run a container of the image
+
+Docker container - running instance of an image(is a flat file, meta data of an operating system)
+
+
+
+
+Sudo docker ps —>all running instances
+
+Sudo docker ps -a —> history of containers
+
+Sudo docker start containerid
+
+Sudo docker stop containerid
+
+Sudo docker rm containerid —> deletes container , make sure container is stopped
+
+Sudo docker attach containerid  —> login to the container as root
+
+Sudo docker images —> lists down all images in the machine that are downloaded
+
+Var/lib/docker  —>containers directory
+ 
+
+Sudo docker run -it centos “/bin/bash/“. — base image of centos …now if you want to come out cntrl+pq
+
+
+
+sudo /bin/systemctl service start httpd.service
+
+Sudo docker images
+Sudo docker login 
+
+docker build -t friendlyhello .  # Create image using this directory's Dockerfile
+docker run -p 4000:80 friendlyhello  # Run "friendlyname" mapping port 4000 to 80
+docker run -d -p 4000:80 friendlyhello         # Same thing, but in detached mode
+docker container ls                                # List all running containers
+docker container ls -a             # List all containers, even those not running
+docker container stop <hash>           # Gracefully stop the specified container
+docker container kill <hash>         # Force shutdown of the specified container
+docker container rm <hash>        # Remove specified container from this machine
+docker container rm $(docker container ls -a -q)         # Remove all containers
+docker image ls -a                             # List all images on this machine
+docker image rm <image id>            # Remove specified image from this machine
+docker image rm $(docker image ls -a -q)   # Remove all images from this machine
+docker login             # Log in this CLI session using your Docker credentials
+docker tag <image> username/repository:tag  # Tag <image> for upload to registry
+docker push username/repository:tag            # Upload tagged image to registry
+docker run username/repository:tag                   # Run image from a registry
+
+
+docker swarm init # 
+docker stack ls                                            # List stacks or apps
+docker stack deploy -c <composefile> <appname>  # Run the specified Compose file
+docker service ls                 # List running services associated with an app
+docker service ps <service>                  # List tasks associated with an app
+docker inspect <task or container>                   # Inspect task or container
+docker container ls -q                                      # List container IDs
+docker stack rm <appname>                             # Tear down an application
+docker swarm leave --force      # Take down a single node swarm from the manager
+
+Docker on AWS
+
+aws cli 
+aws configure
+
+[default]
+aws_access_key_id = AKID1234567890
+aws_secret_access_key = MY-SECRET-KEY
+
+$ docker-machine create --driver amazonec2 aws01
+
+    Docker-machine gives u the ability to create docker host on the Mac or any operating system
+    driver 
+
+Docker creates hierachical images
+
+
+
+
