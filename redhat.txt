@@ -1,4 +1,4 @@
-ED HAT LINUX  - paid support
+RED HAT LINUX  - paid support
 
 Centos — free open source- copy of RedHat slight variation 
 
@@ -600,12 +600,46 @@ grep #removal of lines that contain certain text
 grep wordsearch *.txt #finds wordsearch in all txt files
 grep `^abc` samplefile
 grep `abc$` samplefile
+grep -E `ca+t`. #E stands for extended
+grep c[aou]t #cot,cat or cut
+grep [au]*t
+grep c.t #matches single character between c and t
+
+sed #short form of stream editing
+sed action [files]
+sed -e action1 -e action2 [files]
+sed -f scriptfile [files] #multiple actions in script file 
+
+
+sed actions consists of special characters
+
+sed ’s/foo/bar/‘ testfile #changes first occurrence of foo to bar
+sed ’s/foo/bar/g’ testfile #changes all occurrences of foo to bar
+sed ‘1,10s/foo/bar/‘ testfile
+sed ‘1,10s/foo/bar/‘ testfile
+
+sed ’s/pattern/replacingpattern/’ testfile. #s stands for substitute
+
+
+awk is a text processing tool 
+
+awk action [files]
+who | awk ‘{print $1, “some text”, $2}’ #single quotes are present as $1 and $2 should be considered as special and   
+                                            $1, $2 , $3 are tokens in line 
+
+
+who | awk -F : ‘{print $1, “some text”, $2}’ #Here -F and : represents that the tokens are separated by :
+
+awk -F : ‘{print $1, “sometext:”, $6} /etc/passwd
+
 
 wc #count no of lines, words and characters
 sort #sorting
 tee #duplication and write to files and screen at the same time
 sed #basic editing
 Awk #anything
+
+
 
 
 
