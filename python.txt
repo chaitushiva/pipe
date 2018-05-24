@@ -1,4 +1,4 @@
- Python module is simply a Python source file, which can expose classes, functions and global variables.
+A Python module is simply a Python source file, which can expose classes, functions and global variables.
 When imported from another Python source file, the file name is treated as a namespace.
 A Python package is simply a directory of Python module(s).
 For example, imagine the following directory tree in /usr/lib/python/site-packages:
@@ -19,6 +19,9 @@ my_string[0],my_string[2]….etc
 Slicing my_string[:10] #starting from start and end unto but not including character at 10th index
 my_string[::-1] #string reverse
 
+my_string.index(“i”) #shows index of first occurrence of letter i
+my_string.count(“I”) #shows count of i’s present in the string
+my_string.index(“fir”) #start index of phrase fir
 
 Dictionaries
 
@@ -31,6 +34,51 @@ del dict{‘abc’}
 dict.keys() #Prints all the keys in the same order
 dict.values() #Prints values in the same order
 dict.items() #Prints list of tuples of key, value pairs in the same order
+
+
+range() returns – the list as return type.
+xrange() returns – xrange() object.
+
+	▪	Return Type
+	▪	Memory(range()>xrange())
+	▪	Operation Usage(as range returns list and xrange returns xrange object, xrange is not iterable)
+	▪	Speed (xrange()>range())
+
+Examples of inbuilt iterator types.
+# Sample built-in iterators
+ 
+# Iterating over a list
+print("List Iteration")
+l = ["geeks", "for", "geeks"]
+for i in l:
+    print(i)
+     
+# Iterating over a tuple (immutable)
+print("\nTuple Iteration")
+t = ("geeks", "for", "geeks")
+for i in t:
+    print(i)
+     
+# Iterating over a String
+print("\nString Iteration")    
+s = "Geeks"
+for i in s :
+    print(i)
+     
+# Iterating over dictionary
+print("\nDictionary Iteration")   
+d = dict() 
+d['xyz'] = 123
+d['abc'] = 345
+for i in d :
+    print("%s  %d" %(i, d[i]))
+
+When to use yield instead of return in Python?
+The yield statement suspends function’s execution and sends a value back to caller, but retains enough state to enable function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. This allows its code to produce a series of values over time, rather them computing them at once and sending them back like a list.
+Return sends a specified value back to its caller whereas Yield can produce a sequence of values.
+
+Yield are used in Python generators. A generator function is defined like a normal function, but whenever it needs to generate a value, it does so with the yield keyword rather than return. If the body of a def contains yield, the function automatically becomes a generator function.
+
 
 
 Object oriented programming is based on classes , methods and objects.
@@ -49,6 +97,17 @@ class My_router(object):
          self.ios=ios
      def print_router(self,manu_date):
 		print “the router name and date”, self.routername + self.manu_date
-         
 
+regular expressions
+
+import re
+
+re.match
+
+
+
+
+
+
+         
 

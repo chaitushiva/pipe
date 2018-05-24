@@ -58,6 +58,10 @@ docker tag <image> username/repository:tag  # Tag <image> for upload to registry
 docker push username/repository:tag            # Upload tagged image to registry
 docker run username/repository:tag                   # Run image from a registry
 
+docker  cp #copy from container to local machine
+ Ex: docker cp containername:/usr/local/var/html/index.html . #html file is copied to current directory
+
+
 
 docker swarm init # 
 docker stack ls                                            # List stacks or apps
@@ -87,4 +91,12 @@ Docker creates hierachical images
 
 
 
+docker ps -a -q #lists ids of the containers both stopped and running.
+docker ps #Lists running containers
+docker rm -f containerid #to remove container
+docker rm -f $(docker ps -aq) #removes all containers
+
+docker history imagename #details of how the image has been formed
+docker search name #search the name image in the docker hub
+docker inspect containerid #shows up the low level info in detail
 
