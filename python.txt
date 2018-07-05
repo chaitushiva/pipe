@@ -15,7 +15,7 @@ my_string = “this is my first string”
 my_string can be worked in similar to lists
 
 my_string[0],my_string[2]….etc
-
+	
 Slicing my_string[:10] #starting from start and end unto but not including character at 10th index
 my_string[::-1] #string reverse
 

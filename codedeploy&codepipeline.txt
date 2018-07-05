@@ -1,0 +1,71 @@
+Make your pipeline
+
+Automating tests to catch regressions early
+Identifying production issues quickly
+Deploying changes safely
+Automatically deciding when to release changes
+
+Techniques:
+ Automated testing 
+ Continuous test production
+ Manage deployment health
+ Segment production
+ Halt promotions when production issues to stable the environment
+
+
+Versioned source 
+Automated builds
+Automated deployments
+Deploy to > one instance
+Unit tests
+Integration tests
+Continuous delivery
+Operation dashboard
+
+Monitoring : Cloudwatch for events metrics and alarms (PRODUCTION)
+Software dev tools: extend code pipeline behavior . SNS and AWS LAMBDA
+
+BUILD AND TEST: AWS CODEBUILD, compile and run our test and packaging
+
+DEPLOYEMENT : AWS CODEDEPLOY AND AWS CODEPIPELINE
+
+
+
+Build and unit tests
+ Trigger pipeline on source changes
+ Build and unit tests
+ Deploy to integration environment
+ Execute UI tests
+ Execute integration tests
+  
+
+Continuous production testing : Lamda function and cloud watch metrics : synthetic traffic testing
+
+
+Code deployment health : deployment config , use minimum heath host setting
+
+
+CABLES 0,1
+
+DATA LIKN LAYER : 
+
+NETWORK PROTOCOLS
+
+TRANSPORT TCP/UDP
+
+
+Sha2 , advanced encryption ….
+
+
+VPN solution ….
+
+
+FIREWALL….
+
+
+CLIENT TO SITE VPN
+
+SSL VPN
+
+
+

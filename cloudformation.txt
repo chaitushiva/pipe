@@ -1,0 +1,15 @@
+
+
+
+Parameters:
+
+Initial size: No of instances initially
+
+Max size: scale upto 
+
+Webserver port:
+
+Instance type: m1.small
+
+
+

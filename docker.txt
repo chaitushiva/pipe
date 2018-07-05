@@ -1,3 +1,6 @@
+
+Docker is a system for containerizing applications 
+
 Docker containers are alternative to Vms because they are lightweight . They contain all the dependencies the application requires without the operating system
 
 A Docker image is a zipped file which is a snapshot of all the configuration parameters as well as the changes made in the base image (kernel of the OS).
@@ -8,12 +11,11 @@ Angular is front end client-side framework for developing single page web applic
 
 DevOps: is a software development approach which involved continuous development(GIT&GITHUB), continuous testing, continuous integration(JENKINS), continuous deployment(DOCKER) and continuous monitoring of software through out its software development lifecycle
 
-Dockerfile : used to create image and run a container of the image
+https://docs.docker.com/compose/django/
+
+Dockerfile: used to create image and run a container of the image
 
 Docker container - running instance of an image(is a flat file, meta data of an operating system)
-
-
-
 
 Sudo docker ps —>all running instances
 
@@ -73,6 +75,8 @@ docker container ls -q                                      # List container IDs
 docker stack rm <appname>                             # Tear down an application
 docker swarm leave --force      # Take down a single node swarm from the manager
 
+Docker doesn’t run all the steps until there are changes
+
 Docker on AWS
 
 aws cli 
@@ -87,9 +91,7 @@ $ docker-machine create --driver amazonec2 aws01
     Docker-machine gives u the ability to create docker host on the Mac or any operating system
     driver 
 
-Docker creates hierachical images
-
-
+Docker creates hierarchical images
 
 docker ps -a -q #lists ids of the containers both stopped and running.
 docker ps #Lists running containers
